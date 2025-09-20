@@ -1,0 +1,74 @@
+{
+  "errors": {
+    "apartment": {
+      "not_found": "الشقة غير موجودة",
+      "invalid_reference": "رقم مرجع الشقة غير صحيح",
+      "already_exists": "توجد شقة بالفعل بهذا الرقم المرجعي"
+    },
+    "validation": {
+      "required": "هذا الحقل مطلوب",
+      "failed": "فشل في التحقق",
+      "invalid_email": "يرجى تقديم عنوان بريد إلكتروني صحيح",
+      "invalid_number": "يرجى تقديم رقم صحيح",
+      "invalid_string": "يرجى تقديم نص صحيح",
+      "invalid_boolean": "يرجى تقديم قيمة منطقية صحيحة",
+      "min_length": "يجب أن يكون هذا الحقل على الأقل {min} أحرف",
+      "max_length": "يجب أن يكون هذا الحقل على الأكثر {max} أحرف",
+      "invalid_array": "يرجى تقديم مصفوفة صحيحة",
+      "invalid_locale": "يرجى تقديم لغة صحيحة (مثال: 'en', 'ar')"
+    },
+    "database": {
+      "connection_failed": "فشل الاتصال بقاعدة البيانات",
+      "operation_failed": "فشلت عملية قاعدة البيانات",
+      "transaction_failed": "فشلت المعاملة"
+    },
+    "auth": {
+      "unauthorized": "وصول غير مصرح به",
+      "forbidden": "الوصول محظور",
+      "invalid_token": "رمز المصادقة غير صحيح"
+    },
+    "general": {
+      "internal_server_error": "حدث خطأ داخلي في الخادم",
+      "bad_request": "طلب غير صحيح",
+      "not_found": "المورد غير موجود",
+      "conflict": "تعارض في المورد"
+    }
+  },
+  "messages": {
+    "apartment": {
+      "created_successfully": "تم إنشاء الشقة بنجاح",
+      "updated_successfully": "تم تحديث الشقة بنجاح",
+      "deleted_successfully": "تم حذف الشقة بنجاح"
+    },
+    "general": {
+      "operation_successful": "تمت العملية بنجاح",
+      "welcome": "مرحباً بك في واجهة برمجة تطبيقات شقق ناوي"
+    }
+  },
+  "fields": {
+    "apartment": {
+      "reference_no": "الرقم المرجعي",
+      "compound": "الكمبوند",
+      "neighborhood": "الحي",
+      "developer": "المطور",
+      "sale_type": "نوع البيع",
+      "price": "السعر",
+      "area_sqm": "المساحة (متر مربع)",
+      "bedrooms": "غرف النوم",
+      "bathrooms": "الحمامات",
+      "finishing_status": "حالة التشطيب",
+      "delivery_status": "حالة التسليم",
+      "down_payment": "المقدم",
+      "monthly_installment": "القسط الشهري",
+      "installment_duration_years": "مدة التقسيط (سنوات)",
+      "is_delivered": "تم التسليم",
+      "amenities": "المرافق",
+      "listing_url": "رابط الإعلان",
+      "gallery_images": "صور المعرض",
+      "floor_plan_url": "رابط مخطط الطابق",
+      "title": "العنوان",
+      "description": "الوصف",
+      "locale": "اللغة"
+    }
+  }
+}

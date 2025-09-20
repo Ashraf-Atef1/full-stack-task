@@ -1,0 +1,89 @@
+# Node modules (will be installed inside the image)
+node_modules
+
+# Build output / transpiled code produced inside container
+/dist
+/build
+
+# Dependency caching artifacts (optionally keep if you rely on them)
+.npm
+.pnpm-store
+.yarn
+.yarn/cache
+.yarn/install-state.gz
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime / pid files
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Test & coverage artifacts
+test/
+coverage/
+.nyc_output/
+
+# Local env & secrets (use Docker / orchestrator secrets instead)
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# Temporary / cache dirs
+.tmp/
+.temp/
+cache/
+**/.DS_Store
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+.project
+.classpath
+.c9/
+.settings/
+
+# Git metadata
+.git/
+.gitignore
+.gitattributes
+
+# Docker / Compose files not needed inside image
+Dockerfile
+.dockerignore
+docker-compose.yml
+docker-compose.*.yml
+
+# Docs & misc (optional, comment out if needed)
+README.md
+LICENSE
+
+# Dumps / local data exports
+dump/
+
+# Generated reports
+report.*.json
+
+# OS / misc
+Thumbs.db
+.DS_Store
+
+# Nest CLI build artifacts (if any lingering)
+.nest-helpers
+
+# Lock files for package managers you are NOT using (keep the one you use)
+# If you only use npm, you may uncomment yarn.lock & pnpm-lock.yaml below
+# yarn.lock
+# pnpm-lock.yaml

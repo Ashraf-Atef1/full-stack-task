@@ -1,0 +1,93 @@
+version: "3.9"
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: nawy-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: apartments_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/migration-final-translations.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - nawy-network
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: nawy-backend
+    restart: unless-stopped
+    environment:
+      # Default backend environment variables
+      # To override these values, create ./backend/.env.docker file
+      PORT: 3000
+      MODE: DEV
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DATABASE: apartments_db
+      BASE_URL: http://backend:3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend/uploads:/app/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - nawy-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: nawy-frontend
+    restart: unless-stopped
+    environment:
+      # Default frontend environment variables
+      # To override these values, create ./frontend/.env.docker file
+      NODE_ENV: production
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:3000
+      API_BASE_URL: http://backend:3000
+    ports:
+      - "8000:3000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - nawy-network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  nawy-network:
+    driver: bridge

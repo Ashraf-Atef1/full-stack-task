@@ -1,0 +1,462 @@
+{
+  "info": {
+    "name": "Nawy Apartments API",
+    "description": "Complete API collection for testing the Nawy apartment listing system with i18n support",
+    "version": "1.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "item": [
+        {
+          "name": "Get App Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": ["{{baseUrl}}"],
+              "path": [""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Apartments",
+      "item": [
+        {
+          "name": "Create Apartment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"referenceNo\": \"NAW-2024-TEST-001\",\n  \"compound\": \"Test Compound\",\n  \"neighborhood\": \"Test Area\",\n  \"developer\": \"Test Developer\",\n  \"saleType\": \"Resale\",\n  \"price\": 3500000,\n  \"areaSqm\": 150,\n  \"bedrooms\": 3,\n  \"bathrooms\": 2,\n  \"finishingStatus\": \"Super Lux\",\n  \"deliveryStatus\": \"Ready\",\n  \"downPayment\": 1050000,\n  \"monthlyInstallment\": 35000,\n  \"installmentDurationYears\": 7,\n  \"isDelivered\": true,\n  \"listingUrl\": \"https://nawy.com/apartment/NAW-2024-TEST-001\",\n  \"phoneNumber\": \"+201234567890\",\n  \"galleryImages\": [\n    \"https://nawy.com/images/test1/living.jpg\",\n    \"https://nawy.com/images/test1/bedroom.jpg\",\n    \"https://nawy.com/images/test1/kitchen.jpg\"\n  ],\n  \"floorPlanUrl\": \"https://nawy.com/images/test1/floorplan.pdf\",\n  \"translations\": [\n    {\n      \"locale\": \"en\",\n      \"title\": \"Test Luxury Apartment in Prime Location\",\n      \"description\": \"Beautiful test apartment with modern finishes and amazing amenities. This spacious 3-bedroom unit offers the perfect blend of comfort and luxury.\",\n      \"slug\": \"test-luxury-apartment-prime-location\",\n      \"seoTitle\": \"Luxury 3BR Apartment for Sale - Best Price in Test Area\",\n      \"seoDescription\": \"Beautiful 3-bedroom apartment with modern finishes, great amenities, and competitive pricing in prime location.\",\n      \"seoKeywords\": [\"test\", \"luxury\", \"apartment\", \"3 bedrooms\", \"prime location\", \"modern finishes\"]\n    },\n    {\n      \"locale\": \"ar\",\n      \"title\": \"شقة تجريبية فاخرة في موقع مميز\",\n      \"description\": \"شقة تجريبية جميلة مع تشطيبات حديثة ومرافق رائعة. هذه الوحدة الواسعة بـ 3 غرف نوم تقدم المزيج المثالي من الراحة والفخامة.\",\n      \"slug\": \"شقة-تجريبية-فاخرة-موقع-مميز\",\n      \"seoTitle\": \"شقة فاخرة 3 غرف للبيع - أفضل سعر في المنطقة التجريبية\",\n      \"seoDescription\": \"شقة جميلة بـ 3 غرف نوم مع تشطيبات حديثة ومرافق رائعة وأسعار تنافسية في موقع مميز.\",\n      \"seoKeywords\": [\"تجريبي\", \"فاخر\", \"شقة\", \"3 غرف\", \"موقع مميز\", \"تشطيبات حديثة\"]\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/apartments",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Apartments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/apartments",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Apartments (English)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept-Language",
+                "value": "en",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/apartments?lang=en",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments"],
+              "query": [
+                {
+                  "key": "lang",
+                  "value": "en"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Apartments (Arabic)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept-Language",
+                "value": "ar",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/apartments?lang=ar",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments"],
+              "query": [
+                {
+                  "key": "lang",
+                  "value": "ar"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Apartment by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/apartments/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Apartment by ID (English)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept-Language",
+                "value": "en",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/apartments/1?lang=en",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments", "1"],
+              "query": [
+                {
+                  "key": "lang",
+                  "value": "en"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Apartment by ID (Arabic)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept-Language",
+                "value": "ar",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/apartments/1?lang=ar",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments", "1"],
+              "query": [
+                {
+                  "key": "lang",
+                  "value": "ar"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Complete Apartment (All Fields)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"referenceNo\": \"NAW-2024-COMPLETE-001\",\n  \"compound\": \"Madinaty Hills\",\n  \"neighborhood\": \"New Cairo\",\n  \"developer\": \"Talaat Moustafa Group\",\n  \"saleType\": \"Primary\",\n  \"price\": 5200000,\n  \"areaSqm\": 220,\n  \"bedrooms\": 4,\n  \"bathrooms\": 3,\n  \"finishingStatus\": \"Lux\",\n  \"deliveryStatus\": \"Under Construction\",\n  \"downPayment\": 1560000,\n  \"monthlyInstallment\": 52000,\n  \"installmentDurationYears\": 8,\n  \"isDelivered\": false,\n  \"listingUrl\": \"https://nawy.com/apartment/NAW-2024-COMPLETE-001\",\n  \"phoneNumber\": \"+201123456789\",\n  \"galleryImages\": [\n    \"https://nawy.com/images/complete1/exterior.jpg\",\n    \"https://nawy.com/images/complete1/living.jpg\",\n    \"https://nawy.com/images/complete1/master_bedroom.jpg\",\n    \"https://nawy.com/images/complete1/kitchen.jpg\",\n    \"https://nawy.com/images/complete1/bathroom.jpg\",\n    \"https://nawy.com/images/complete1/balcony.jpg\"\n  ],\n  \"floorPlanUrl\": \"https://nawy.com/images/complete1/floorplan.pdf\",\n  \"translations\": [\n    {\n      \"locale\": \"en\",\n      \"title\": \"Stunning 4BR Villa-Style Apartment in Madinaty Hills\",\n      \"description\": \"Experience luxury living in this exceptional 4-bedroom apartment featuring premium finishes, spacious layouts, and breathtaking views. Located in the prestigious Madinaty Hills development, this property offers the perfect blend of modern amenities and serene surroundings. The apartment includes a master suite with walk-in closet, gourmet kitchen with high-end appliances, and expansive living areas perfect for entertaining.\",\n      \"slug\": \"stunning-4br-villa-apartment-madinaty-hills\",\n      \"seoTitle\": \"4BR Luxury Apartment Madinaty Hills - TMG Development\",\n      \"seoDescription\": \"Exceptional 4-bedroom apartment in Madinaty Hills with premium finishes, modern amenities, and flexible payment plans.\",\n      \"seoKeywords\": [\"madinaty hills\", \"4 bedroom apartment\", \"luxury\", \"tmg\", \"new cairo\", \"villa style\", \"primary sale\", \"installments\"]\n    },\n    {\n      \"locale\": \"ar\",\n      \"title\": \"شقة فيلا مذهلة 4 غرف في تلال مدينتي\",\n      \"description\": \"استمتع بالحياة الفاخرة في هذه الشقة الاستثنائية المكونة من 4 غرف نوم والتي تتميز بتشطيبات راقية وتخطيطات واسعة وإطلالات خلابة. تقع في مجمع تلال مدينتي المرموق، وتوفر هذه الوحدة المزيج المثالي من وسائل الراحة الحديثة والبيئة الهادئة. تشمل الشقة جناح رئيسي مع غرفة ملابس، ومطبخ فاخر مع أجهزة عالية الجودة، ومناطق معيشة واسعة مثالية للضيافة.\",\n      \"slug\": \"شقة-فيلا-مذهلة-4-غرف-تلال-مدينتي\",\n      \"seoTitle\": \"شقة فاخرة 4 غرف تلال مدينتي - مشروع طلعت مصطفى\",\n      \"seoDescription\": \"شقة استثنائية 4 غرف نوم في تلال مدينتي مع تشطيبات راقية ووسائل راحة حديثة وخطط دفع مرنة.\",\n      \"seoKeywords\": [\"تلال مدينتي\", \"شقة 4 غرف\", \"فاخر\", \"طلعت مصطفى\", \"القاهرة الجديدة\", \"طراز فيلا\", \"بيع أولي\", \"أقساط\"]\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/apartments",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Minimal Apartment (Required Fields Only)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"referenceNo\": \"NAW-2024-MINIMAL-001\",\n  \"compound\": \"Basic Compound\",\n  \"neighborhood\": \"Downtown\",\n  \"developer\": \"Basic Developer\",\n  \"saleType\": \"Rent\",\n  \"price\": 25000,\n  \"areaSqm\": 100,\n  \"bedrooms\": 2,\n  \"bathrooms\": 1,\n  \"finishingStatus\": \"Semi-finished\",\n  \"deliveryStatus\": \"Ready\",\n  \"isDelivered\": true,\n  \"listingUrl\": \"https://nawy.com/apartment/NAW-2024-MINIMAL-001\",\n  \"translations\": [\n    {\n      \"locale\": \"en\",\n      \"title\": \"Affordable 2BR Apartment for Rent\"\n    },\n    {\n      \"locale\": \"ar\",\n      \"title\": \"شقة اقتصادية غرفتين للإيجار\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/apartments",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Non-existent Apartment (404 Test)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/apartments/999",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments", "999"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Error Testing",
+      "item": [
+        {
+          "name": "Create Apartment - Validation Error",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"referenceNo\": \"\",\n  \"compound\": \"\",\n  \"price\": \"invalid\",\n  \"bedrooms\": -1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/apartments",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Apartment - Duplicate Reference",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"referenceNo\": \"NAW-2024-001\",\n  \"compound\": \"Duplicate Test\",\n  \"neighborhood\": \"Test Area\",\n  \"developer\": \"Test Developer\",\n  \"saleType\": \"Resale\",\n  \"price\": 3500000,\n  \"areaSqm\": 150,\n  \"bedrooms\": 3,\n  \"bathrooms\": 2,\n  \"finishingStatus\": \"Super Lux\",\n  \"deliveryStatus\": \"Ready\",\n  \"downPayment\": 1050000,\n  \"monthlyInstallment\": 35000,\n  \"installmentDurationYears\": 7,\n  \"isDelivered\": true,\n  \"listingUrl\": \"https://nawy.com/apartment/duplicate\",\n  \"phoneNumber\": \"+201234567890\",\n  \"galleryImages\": [\"https://nawy.com/images/duplicate.jpg\"],\n  \"floorPlanUrl\": \"https://nawy.com/images/duplicate.pdf\",\n  \"translations\": [\n    {\n      \"locale\": \"en\",\n      \"title\": \"Duplicate Test Apartment\",\n      \"description\": \"This should fail due to duplicate reference number.\",\n      \"slug\": \"duplicate-test-apartment\",\n      \"seoTitle\": \"Duplicate Test - Should Fail\",\n      \"seoDescription\": \"This apartment creation should fail due to duplicate reference number.\",\n      \"seoKeywords\": [\"duplicate\", \"test\", \"error\"]\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/apartments",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Invalid Apartment ID (String)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/apartments/invalid",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments", "invalid"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Localization Testing",
+      "item": [
+        {
+          "name": "Test English Headers",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept-Language",
+                "value": "en-US,en;q=0.9",
+                "type": "text"
+              },
+              {
+                "key": "x-lang",
+                "value": "en",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/apartments/999",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments", "999"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Test Arabic Headers",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept-Language",
+                "value": "ar-EG,ar;q=0.9",
+                "type": "text"
+              },
+              {
+                "key": "x-lang",
+                "value": "ar",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/apartments/999",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments", "999"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Test Query Parameter Priority",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept-Language",
+                "value": "en",
+                "type": "text"
+              },
+              {
+                "key": "x-lang",
+                "value": "en",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/apartments/1?lang=ar",
+              "host": ["{{baseUrl}}"],
+              "path": ["apartments", "1"],
+              "query": [
+                {
+                  "key": "lang",
+                  "value": "ar",
+                  "description": "Should override headers"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Swagger Documentation",
+      "item": [
+        {
+          "name": "Get Swagger JSON",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api-json",
+              "host": ["{{baseUrl}}"],
+              "path": ["api-json"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Swagger UI",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api",
+              "host": ["{{baseUrl}}"],
+              "path": ["api"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Set common headers for all requests",
+          "pm.request.headers.add({",
+          "    key: 'Content-Type',",
+          "    value: 'application/json'",
+          "});",
+          "",
+          "// Log the request for debugging",
+          "console.log('Making request to:', pm.request.url.toString());"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Common test assertions",
+          "pm.test('Response time is less than 5000ms', function () {",
+          "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+          "});",
+          "",
+          "pm.test('Response has correct content type', function () {",
+          "    if (pm.response.code !== 404) {",
+          "        pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+          "    }",
+          "});",
+          "",
+          "// Log response for debugging",
+          "console.log('Response status:', pm.response.status);",
+          "console.log('Response body:', pm.response.text());"
+        ]
+      }
+    }
+  ]
+}

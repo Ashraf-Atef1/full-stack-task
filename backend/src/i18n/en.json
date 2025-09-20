@@ -1,0 +1,74 @@
+{
+  "errors": {
+    "apartment": {
+      "not_found": "Apartment not found",
+      "invalid_reference": "Invalid apartment reference number",
+      "already_exists": "Apartment with this reference number already exists"
+    },
+    "validation": {
+      "required": "This field is required",
+      "failed": "Validation failed",
+      "invalid_email": "Please provide a valid email address",
+      "invalid_number": "Please provide a valid number",
+      "invalid_string": "Please provide a valid text value",
+      "invalid_boolean": "Please provide a valid boolean value",
+      "min_length": "This field must be at least {min} characters long",
+      "max_length": "This field must be at most {max} characters long",
+      "invalid_array": "Please provide a valid array",
+      "invalid_locale": "Please provide a valid locale (e.g., 'en', 'ar')"
+    },
+    "database": {
+      "connection_failed": "Database connection failed",
+      "operation_failed": "Database operation failed",
+      "transaction_failed": "Transaction failed"
+    },
+    "auth": {
+      "unauthorized": "Unauthorized access",
+      "forbidden": "Access forbidden",
+      "invalid_token": "Invalid authentication token"
+    },
+    "general": {
+      "internal_server_error": "Internal server error occurred",
+      "bad_request": "Invalid request",
+      "not_found": "Resource not found",
+      "conflict": "Resource conflict"
+    }
+  },
+  "messages": {
+    "apartment": {
+      "created_successfully": "Apartment created successfully",
+      "updated_successfully": "Apartment updated successfully",
+      "deleted_successfully": "Apartment deleted successfully"
+    },
+    "general": {
+      "operation_successful": "Operation completed successfully",
+      "welcome": "Welcome to Nawy Apartments API"
+    }
+  },
+  "fields": {
+    "apartment": {
+      "reference_no": "Reference Number",
+      "compound": "Compound",
+      "neighborhood": "Neighborhood",
+      "developer": "Developer",
+      "sale_type": "Sale Type",
+      "price": "Price",
+      "area_sqm": "Area (sqm)",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "finishing_status": "Finishing Status",
+      "delivery_status": "Delivery Status",
+      "down_payment": "Down Payment",
+      "monthly_installment": "Monthly Installment",
+      "installment_duration_years": "Installment Duration (Years)",
+      "is_delivered": "Is Delivered",
+      "amenities": "Amenities",
+      "listing_url": "Listing URL",
+      "gallery_images": "Gallery Images",
+      "floor_plan_url": "Floor Plan URL",
+      "title": "Title",
+      "description": "Description",
+      "locale": "Language"
+    }
+  }
+}
