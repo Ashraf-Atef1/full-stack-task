@@ -46,8 +46,8 @@ A modern, full-stack apartment management platform that demonstrates enterprise-
 **One command to rule them all:**
 
 ```bash
-git clone <repository-url>
-cd nawy
+git clone git@github.com:Ashraf-Atef1/full-stack-task.git
+cd full-stack-task
 docker-compose up --build
 ```
 
