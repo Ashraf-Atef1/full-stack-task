@@ -52,7 +52,7 @@ export const apartmentFormSchema = z.object({
 		.or(z.literal("")),
 	phoneNumber: z
 		.string()
-		.regex(/^\+?[1-9]\d{1,14}$/, "Please enter a valid phone number")
+		.regex(/^\+?\d{1,14}$/, "Please enter a valid phone number")
 		.optional()
 		.or(z.literal("")),
 
